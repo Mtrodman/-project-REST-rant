@@ -5,7 +5,7 @@ const app = express()
 Router.get('/', (req, res) => {
     res.send('GET /places')
 })
-
+module.exports = router
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
@@ -17,4 +17,4 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT)
-module.exports = router
+
