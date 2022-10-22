@@ -17,7 +17,9 @@ router.get(`/`, (req, res) => {
       }];      
     res.render(`places`,{ places })
 })
-
+router.post(`/`, (req, res) => {
+    res.render(`text`)
+})
 router.get('/new', (req, res) => {
     res.render('places/new')
   })
