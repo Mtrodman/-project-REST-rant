@@ -2,15 +2,19 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
-app.use('/places', require('./controllers/places'))
-
-app.get('/', (req, res) => {
-    res.send('Hello world!')
+//Middleware
+app.set(`view engine`, `jsx`)
+app.engine(`jsx`, require(`express-react-views`).createEngine())
+//router
+app.use(`/places`, require(`./controllers/places`))
+//GET homepage
+app.get(`/`, (req, res) => {
+    res.render(`home`)
 })
 
-app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
+//404
+app.get(`*`, (req, res) => {
+    res.status(404).render(`error404`)
 })
 
 app.listen(process.env.PORT)
-
