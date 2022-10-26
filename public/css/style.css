@@ -41,3 +41,40 @@ nav a:hover {
     color: pink;
     text-decoration: none;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content:space-between; */
+  }
+
+#children{
+    flex: 1 0 auto;
+}
+
+main{
+    height:90%;
+    padding: 3%;
+}
+
+h1 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+img{
+    width:30%;
+    text-align: center;
+}
+
+#form{
+    padding:3%;
+}
+
+#footer{
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    padding:15px;
+    /* might not need this */
+    flex-shrink: 0;
+}
