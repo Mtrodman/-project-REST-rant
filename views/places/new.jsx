@@ -92,6 +92,11 @@ function new_form() {
                             <option value="WY">Wyoming</option>
                         </select>
                     </div>
+                    <div className="form-group">
+                        <label for="founded">Founded Year</label>
+                        <input type="nubmer" className="form-control" id="founded" name="founded" value={new Date() .getFullYear()} />
+                        </div>
+
                     <br />
                     <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>

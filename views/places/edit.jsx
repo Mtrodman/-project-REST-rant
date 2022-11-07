@@ -8,12 +8,12 @@ function edit_form(data) {
                 <h1>Edit Place</h1>
                 <form method="POST" action={`/places/${data.id}?_method=PUT`}>
                     <div className='row'>
-                        <div className="form-group col-sm-6">
-                            <label htmlFor="name">Place Name</label>
+                        <div className="form-group col-sm-">
+                            <label htmlFor="founded">Founded</label>
                             <input className="form-control"
-                                id="name"
-                                name="name"
-                                value={data.place.name}
+                                id="founded"
+                                name="founded"
+                                value={data.place.founded}
                                 required />
                         </div>
                         <div className="form-group col-sm-6">
@@ -109,49 +109,3 @@ function edit_form(data) {
 }
 
 module.exports = edit_form
-
-// const React = require('react')
-// const Def = require('../default.jsx')
-
-// function edit_form (data) {
-//     return (
-//         <Def>
-//           <main>
-//             <h1>Edit Place</h1>
-//             <form method="POST" action={`/places/${data.id}?_method=PUT`}>
-//                 <div className="row">
-//                 <div className="form-group col-sm-6">
-//                 <label htmlFor="name">Place Name</label>
-//                 <input 
-//                 className="form-control"  
-//                 id="name" 
-//                 name="name" 
-//                 value={data.place.name}
-//                 required >
-//                 </input>
-//                 </div>
-//                 <div className="form-group col-sm-6" >
-//                 <label htmlFor="name">Place Picture</label>
-//                 <input  className="form-control" id="pic" name="pic" pattern="https?://.+" value={data.place.pic}></input>
-//                 </div>
-//                 <div className="form-group col-sm-6">
-//                 <label htmlFor="name">Place City</label>
-//                 <input  className="form-control" id="city" name="city" value={data.place.city}></input>
-//                 </div>
-//                 <div className="form-group col-sm-6">
-//                 <label htmlFor="name">Place State</label>
-//                 <input  className="form-control" id="state" name="state" value={data.place.state}></input>
-//                 </div>
-//                 <div className="form-group col-sm-6">
-//                 <label htmlFor="name">Place Cuisines</label>
-//                 <input  className="form-control" id="cuisines" name="cuisines" value={data.place.cuisines}required></input>
-//                 </div>
-//                 <input className="btn btn-primary" type="submit" value="Add Places"></input>
-//                 </div>
-//             </form>
-//           </main>
-//         </Def>
-//     )
-// }
-
-// module.exports = edit_form
