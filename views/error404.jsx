@@ -6,16 +6,13 @@ function error404 () {
         <Def>
             <main>
                 <h1>404: PAGE NOT FOUND</h1>
+                <div>
+                    <img src="/images/sad-pizza.gif" alt="man wipes tears with whole pizza"/>
+                <div>
+                    Photo by <a href="https://imgur.com/user/queeferito">A Scandlous Burrito</a> on <a href="https://imgur.com/gallery/gYv6Q">imgur</a>
+                </div>
+                </div>
                 <p>Oops, sorry, we can't find this page!</p>
-                <div>
-                    <img class="steak" src="/images/steak.jpg" alt="steak"/>
-                </div>
-                <div>
-                    Photo by <a href="https://unsplash.com/@foodiman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">iman zaker</a> on <a href="https://unsplash.com/s/photos/steak">uplash</a>
-                </div>
-                <a href="/places">
-                    <button className="btn-primary">Places Page</button>
-                </a>
             </main>
         </Def>
     )

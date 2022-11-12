@@ -7,15 +7,15 @@ function home () {
             <main>
                 <h1>HOME</h1>
                 <div>
-                    <img class="steak" src="/images/grilling.jpg" alt="grill"/>
-                </div>
+                    <img id="home-image" src="/images/curry.jpg" alt="indian curry with naan"/>
                 <div>
-                    Photo by <a href="https://unsplash.com/@aminhasani?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">amin hasni</a> on <a href="https://unsplash.com/s/photos/grilling">uplash</a>
+                    Photo by <a href="https://unsplash.com/@mekalluakella">Kalyani Akella</a> on <a href="https://unsplash.com/photos/gml9g1kRQcM">Unsplash</a>
                 </div>
+                </div>
+
                 <a href="/places">
-                    <button type="button" className="btn btn-primary">Places Page</button>
+                    <button className='btn btn-primary'>Places Page</button>
                 </a>
- 
             </main>
         </Def>
     )

@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 const express = require('express')
 const app = express()
@@ -9,13 +10,12 @@ app.set(`view engine`, `jsx`)
 app.engine(`jsx`, require(`express-react-views`).createEngine())
 app.use(express.static(`public`))
 //body parser
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 //method override
 app.use(methodOverride(`_method`))
 
-// //router
+//router
 app.use(`/places`, require(`./controllers/places`))
-
 
 //GET homepage
 app.get(`/`, (req, res) => {
@@ -28,3 +28,5 @@ app.get(`*`, (req, res) => {
 })
 
 app.listen(process.env.PORT)
+
+module.exports = app;

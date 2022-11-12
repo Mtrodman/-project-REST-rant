@@ -1,20 +1,30 @@
 const React = require(`react`)
 const Def = require(`../default`)
 
-function new_form() {
+function new_form(data) {
+    let message = ''
+    if(data.message){
+        message = (
+            <h4 className="alert-danger">
+                {data.message}
+            </h4>
+        )
+    }
     return (
         <Def>
             <main id="form">
                 <h1>Add a New Place</h1>
+                {message}
                 <form method="POST" action="/places">
-                    <div className="form-group">
+                    <div className='row'>
+                    <div className="col-sm-6 col-md-4 col-lg-3">
                         <label htmlFor="name">Place Name</label>
                         <input className="form-control"
                             id="name"
                             name="name"
                             required />
                     </div>
-                    <div className="form-group">
+                    <div className="col-sm-6 col-md-4 col-lg-3">
                         <label htmlFor="pic">Place Picture</label>
                         <input className="form-control"
                             type="url"
@@ -23,21 +33,21 @@ function new_form() {
                             pattern="https?://.+"
                             placeholder="http://" />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="cuisine">Cuisine</label>
+                    <div className="col-sm-6 col-md-4 col-lg-3">
+                        <label htmlFor="cuisines">Cuisine</label>
                         <input className="form-control"
-                            id="cuisine"
-                            name="cuisine"
+                            id="cuisines"
+                            name="cuisines"
                             required />
                     </div>
-                    <div className="form-group">
+                    <div className="col-sm-6 col-md-4 col-lg-3">
                         <label htmlFor="city">City</label>
                         <input className="form-control"
                             id="city"
                             name="city"
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="col-sm-6 col-md-4 col-lg-3">
                         <label htmlFor="state">State</label>
                         <select className="form-control" name="state">
                             <option value="AL">Alabama</option>
@@ -55,7 +65,6 @@ function new_form() {
                             <option value="ID">Idaho</option>
                             <option value="IL">Illinois</option>
                             <option value="IN">Indiana</option>
-                            <option value="KS">Kansas</option>
                             <option value="KY">Kentucky</option>
                             <option value="LA">Louisiana</option>
                             <option value="MA">Massachussets</option>
@@ -92,11 +101,17 @@ function new_form() {
                             <option value="WY">Wyoming</option>
                         </select>
                     </div>
-                    <div className="form-group">
+                    <div className="col-sm-6 col-md-4 col-lg-3">
                         <label for="founded">Founded Year</label>
-                        <input type="nubmer" className="form-control" id="founded" name="founded" value={new Date() .getFullYear()} />
-                        </div>
-
+                        <input 
+                        type="number"
+                        className="form-control"
+                        id="founded"
+                        name="founded"
+                        //will yield the current year
+                        value={new Date().getFullYear()}/>
+                    </div>
+                    </div>
                     <br />
                     <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>
@@ -106,42 +121,3 @@ function new_form() {
 }
 
 module.exports = new_form
-
-// const React = require('react')
-// const Def = require('../default')
-
-// function new_form () {
-//     return (
-//         <Def>
-//           <main>
-//             <h1> New Place</h1>
-//             <form method="POST" action="/places">
-//                 <div className="form-group">
-//                 <label htmlFor="name">Place Name</label>
-//                 <input className="form-control"  id="name" name="name" required></input>
-//                 </div>
-//                 <div className="form-group" >
-//                 <label htmlFor="name">Place Picture</label>
-//                 <input  className="form-control" id="pic" name="pic"></input>
-//                 </div>
-//                 <div className="form-group">
-//                 <label htmlFor="name">Place City</label>
-//                 <input  className="form-control" id="city" name="city"></input>
-//                 </div>
-//                 <div className="form-group">
-//                 <label htmlFor="name">Place State</label>
-//                 <input  className="form-control" id="state" name="state"></input>
-//                 </div>
-//                 <div className="form-group">
-//                 <label htmlFor="name">Place Cuisines</label>
-//                 <input  className="form-control" id="cuisines" name="cuisines" required></input>
-//                 </div>
-//                 <input className="btn btn-primary" type="submit" value="Add Places"></input>
-//             </form>
-//           </main>
-//         </Def>
-//     )
-// }
-
-// module.exports = new_form
-
